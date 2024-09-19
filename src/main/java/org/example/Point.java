@@ -5,11 +5,11 @@ public class Point {
     private int y;
 
     public int getX() {
-        return x;
+        return this.x;
     }
 
     public int getY() {
-        return y;
+        return this.y;
     }
 
     public void setX(int x) {
@@ -20,8 +20,23 @@ public class Point {
         this.y = y;
     }
 
+    public double distance() {
+        return Math.sqrt(Math.pow(x, 2) + Math.pow(y,2));
+    }
+    public double distance(Point point) {
+        if(point == null){
+            System.out.println("point objesi null geldi.");
+            return 0;
+        }
+        return distance(point.x, point.y);
+    }
+    public double distance(int x, int y) {
+        return Math.sqrt(Math.pow((this.x - x), 2) + Math.pow((this.y - y), 2));
+    }
+
+
     public Point(int x, int y) {
-        setX(x);
-        setY(y);
+        this.x = x;
+        this.y = y;
     }
 }
